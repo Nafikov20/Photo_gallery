@@ -1,0 +1,60 @@
+.container {
+    perspective: 93.75rem;
+}
+.gallery {
+    transform-style: preserve-3d;
+}
+.frame {
+    transition: var(--transition), opacity .87s ease;
+    will-change: transform;
+    transform-style: preserve-3d;
+}
+.frame h3 {
+    text-align: center;
+    font-size: calc(var(--index) * 3.3);
+    width: min-content;
+    line-height: 1;
+}
+.frame-media {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    width: calc(var(--index) * var(--side-small));
+    height: calc(var(--index) * var(--side-big));
+}
+video.frame-media {
+    width: calc(var(--index) * var(--side-big));
+    height: calc(var(--index) * var(--side-small));
+}
+video.frame-media-left {
+    right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+video.frame-media-right {
+    left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+.frame-bg {
+    background-color: rgb(0 0 0 / .75);
+}
+.frame-media-left {
+    right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame-media-right {
+    left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame-text-left > * {
+    position: relative;
+    right: 18vw;
+}
+.frame h3 {
+    font-size: calc(var(--index) * 3);
+    text-shadow: 2px 2px 8px rgb(50 191 250), 0px -5px 35px rgb(10 0 255);
+}
+.frame p {
+    max-width: 30vw;
+    margin-top: 5vh;
+    text-shadow: 2px 2px 8px rgb(50 191 250), 0px -5px 35px rgb(10 0 255);
+}
+.frame-text-right > * {
+    position: relative;
+    left: 18vw;
+}

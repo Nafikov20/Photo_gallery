@@ -1,0 +1,7 @@
+.mapboxgl-canvas {
+    border-radius: 10px;
+    opacity: .7;
+}
+.mapboxgl-ctrl-attrib {
+    display: none;
+}

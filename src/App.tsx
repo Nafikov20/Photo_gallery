@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Header } from './components/header/header';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import { Home } from './pages/home';
+import { Map } from './pages/location-photo/map';
 
-function App() {
+const App = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, [pathname]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Routes>
+        <Route element={<Home />} path='/' />
+        <Route element={<Map />} path='/map' />
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
